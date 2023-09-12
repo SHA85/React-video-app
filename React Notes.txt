@@ -1,0 +1,42 @@
+Ref : https://www.youtube.com/watch?v=SqcY0GlETPk
+
+> npm create vite@4.1.0
+> npm i bootstrap@5.2.3
+
+============= x =============
+
+file extension => .ts for plain TypeScript
+               => .tsx for React Component TypeScript
+
+============= x =============
+Javascript Class Component or Function Component => Function Component is more concise & easer to write 
+
+============= x =============
+
+Naming Component => PascalCasing
+function Message() {
+    // JSX : Javascript XML
+    return <h1>Hello World</h1>;
+}
+
+============= x =============
+
+React, React DOM => Work Together to convert HTML DOM to React DOM.
+
+<h1>Hello</h1> 
+=> 
+import { jsx as _jsx } from "react/jsx-runtime";
+/*#__PURE__*/_jsx("h1", {
+  children: "Hello"
+});
+
+https://babeljs.io/repl
+https://swc.rs/
+(SWC is 20x faster than Babel on a single thread and 70x faster on four cores.)
+
+============= x =============
+
+PROPS						STATES
+Input passed to a component		Data managed by a component
+Similar to function args		Similar to local variables
+Immutable (not changeable)		Mutable (changeable)

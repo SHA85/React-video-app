@@ -1,14 +1,14 @@
 //import { MouseEvent } from "react";
 
 import { useState } from "react";
+import ListItem from "./ListItem";
 
 interface Props {
   heading: string;
   items: string[];
-  onSelectItem: (item: string) => void;
 }
 
-function ListGroup({ heading, items, onSelectItem }: Props) {
+function ListGroup({ heading, items }: Props) {
   //const handleClick = (e: MouseEvent) => console.log(e);
   const [selectedIndex, setSelectedIndex] = useState(-1);
   return (
@@ -17,20 +17,14 @@ function ListGroup({ heading, items, onSelectItem }: Props) {
       {items.length === 0 && <p>No items!</p>}
       <ul className="list-group">
         {items.map((item, index) => (
-          <li
+          <ListItem
             key={index}
-            className={
-              selectedIndex === index
-                ? "list-group-item active"
-                : "list-group-item"
-            }
-            onClick={() => {
+            label={item}
+            isActive={index === selectedIndex}
+            onSelectItem={() => {
               setSelectedIndex(index);
-              onSelectItem(item);
             }}
-          >
-            {item}
-          </li>
+          />
         ))}
       </ul>
     </>

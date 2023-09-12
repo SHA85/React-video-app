@@ -13,16 +13,8 @@ function App() {
 
   return (
     <div>
-      <ListGroup
-        heading="Item List"
-        items={cities}
-        onSelectItem={handleSelectItem}
-      />
-      <ListGroup
-        heading="Item List"
-        items={colors}
-        onSelectItem={handleSelectItem}
-      />
+      <ListGroup heading="City List" items={cities} />
+
       {alertVisible && (
         <Alert onClose={() => setAlertVisiblity(false)}>
           Hello <span>Alert</span>
